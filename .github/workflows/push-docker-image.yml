@@ -3,14 +3,14 @@ on:
   push:
     branches: [ biswajit-1 ]
 jobs:
-  build-and-push-image-to-githuba-container-registry:
+  build-and-push-image-to-github-container-registry:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Build Image
-        run: docker build -< Dockerfile -t ghcr.io/roshinroy12/myimage:1.0
+        run: docker build -< Dockerfile -t ghcr.io/biswajit-roy1/myimage:1.0
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
@@ -20,5 +20,5 @@ jobs:
 
       - name: Pushing to GitHub Container Registry
         run: |
-
+          
           docker push ghcr.io/biswajit-1/myimage:1.0
