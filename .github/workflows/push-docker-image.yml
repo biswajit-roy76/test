@@ -20,5 +20,4 @@ jobs:
 
       - name: Pushing to GitHub Container Registry
         run: |
-
-          docker push ghcr.io/biswajit-1/myimage:1.0
+           docker push ghcr.io/biswajit-1/myimage:1.0
