@@ -3,15 +3,10 @@ name: CI
 on: [ push ]
 
 jobs:
-  build:
-
+  image-build:
     runs-on: ubuntu-latest
-
+    container:
+      image: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Run online-script3
-        run: echo Hello, world!
-      - name: Run a multi line script
-        run: |
-          echo Add other actions to build
-          echo test, and deploy your project.
+      - name: Building Docker Image
+        run: docker build -t myimage:1.0 ./Dockerfile
