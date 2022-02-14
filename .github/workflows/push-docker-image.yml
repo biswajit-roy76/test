@@ -14,5 +14,5 @@ jobs:
       - uses: azure/docker-login@v1
           with:
             login-server: leaptest1.azurecr.io
-            username: leaptest1
-            password: 7cpkBkZY5W=yRNJIKUCD5PXraWcWaheM
+            username: ${{ secrets.ACR_USERNAME }}
+            password: ${{ secrets.ACR_PASSWORD }}
