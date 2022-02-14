@@ -15,7 +15,7 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Image Building
         run: |
-        docker build -< Dockerfile -t sampleacr2.azurecr.io myimage/leaptest
+          docker build -< Dockerfile -t sampleacr2.azurecr.io myimage/leaptest
          -
       - name:Push Docker Image
         run: |
