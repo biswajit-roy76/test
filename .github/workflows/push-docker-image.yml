@@ -9,8 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build Image
-        run: docker build - < Dockerfile -t ghcr.io/biswajit-roy76/myimage:1.0
       - uses: azure/docker-login@v1
           with:
             login-server: leaptest1.azurecr.io
