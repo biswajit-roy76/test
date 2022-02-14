@@ -7,10 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          run: docker build -< Dockerfile -t leaptest1.azurecr.io/biswajit-roy76/myimage:1.0
-          docker push/appdb:${{ github.sha }}/appdb:${{ github.sha }}
-
       - name: Docker Login
       - uses: azure/docker-login@v1
         with:
@@ -18,3 +14,6 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
+          - run: |
+              run: docker build -< Dockerfile -t sampleacr2.azurecr.io myimage/leaptest
+              docker push myimage/leaptest
