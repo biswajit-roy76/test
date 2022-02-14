@@ -8,19 +8,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Login to Azure Container Registry
-          uses: azure/docker-login@v1
-          with:
-            login-server: sampleacr2.azurecr.io
-            username: ${{ secrets.ACR_USERNAME }}
-            password: ${{ secrets.ACR_PASSWORD }}
-            - name: Image Building
-              run: |
-                docker build -< Dockerfile -t sampleacr2.azurecr.io myimage/leaptest
-            - name: Push Docker Image
-              run: |
-                docker push sampleacr2.azurecr.io/myimage/leaptest
+        uses: azure/docker-login@v1
+        with:
+          login-server: sampleacr2.azurecr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+       - name: Image Building
+         run: |
+          docker build -< Dockerfile -t sampleacr2.azurecr.io myimage/leaptest
+       - name: Push Docker Image
+         run: |
+          docker push sampleacr2.azurecr.io/myimage/leaptest
             - name: Pull docker image
-              run: |
-                docker pull sampleacr2.azurecr.io/myimage/leaptest
+        run: |
+          docker pull sampleacr2.azurecr.io/myimage/leaptest
 
 
