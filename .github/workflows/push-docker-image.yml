@@ -16,4 +16,4 @@ jobs:
 
          - run: |
               run: docker build -< Dockerfile -t ghcr.io/biswajit-roy76/myimage:1.0
-              docker push docker pus/appdb:${{ github.sha }}/appdb:${{ github.sha }}
+              docker push docker push/appdb:${{ github.sha }}/appdb:${{ github.sha }}
